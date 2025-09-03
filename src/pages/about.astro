@@ -1,19 +1,47 @@
+---
+const pageTitle = "About Me";
+
+const identity = {
+    firstName: "prime_gator",
+    country: "Vietnam",
+    occupation: "human being",
+    hobbies: ["playing asymmetrical horror games", "swimming", "eating the most unhealthy things known to man", "violating the Geneva conventions"]
+
+
+};
+
+const skills = ["Python", "Lua", "C#", "CSS", "Pygame", "PyQt", "Panda3D", "HTML", "JavaScript", "Unity"]
+---
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">Home</a>
 		<a href="/about">About</a>
         <a href="/blog">Blog</a>
-		<h1>About me</h1>
+		<h1>{pageTitle}</h1>
         <h2>...and my new Astro site</h2>
 
         <p>im learning to violate the Geneva conventions (side note: and use Astro) to create my first blog.</p>
-        <p>This site will be updated as I commit war crimes and work through the introduction tutorial</p>
+        <p>This site will be updated as I commit war crimes and work through the introduction tutorial.</p>
+
+        <p>Some facts about me:</p>
+        <ul>
+            <li>My name is {identity.firstName}.</li>
+            <li>I live in {identity.country} and I am a {identity.occupation}.</li>
+            {identity.hobbies.length >= 2 &&
+                <li>two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[2]}.</li>
+            }
+        </ul>
+        <p>My skills are:</p>
+        <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
 	</body>
 </html>
