@@ -1,4 +1,8 @@
 ---
+import '../styles/global.css'
+import Navigation from '../components/Navigation.astro'
+import Footer from '../components/Footer.astro';
+
 const pageTitle = "About Me";
 
 const identity = {
@@ -11,6 +15,12 @@ const identity = {
 };
 
 const skills = ["Python", "Lua", "C#", "CSS", "Pygame", "PyQt", "Panda3D", "HTML", "JavaScript", "Unity"]
+
+const happy = true;
+const finished = false;
+const goal = 8;
+
+const skillColor = "navy"
 ---
 
 <html lang="en">
@@ -20,16 +30,30 @@ const skills = ["Python", "Lua", "C#", "CSS", "Pygame", "PyQt", "Panda3D", "HTML
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+        <style define:vars={{skillColor}}>
+            h1 {
+                color: purple;
+                font-size: 4rem;
+            }
+
+        .skill {
+            color: var(--skillColor);
+            font-weight: bold;
+        }
+        </style>
+
 	</head>
 	<body>
-        <a href="/">Home</a>
-		<a href="/about">About</a>
-        <a href="/blog">Blog</a>
+        <Navigation />
 		<h1>{pageTitle}</h1>
         <h2>...and my new Astro site</h2>
 
-        <p>im learning to violate the Geneva conventions (side note: and use Astro) to create my first blog.</p>
+        <p>I am learning to violate the Geneva conventions (side note: and use Astro) to create my first blog.</p>
         <p>This site will be updated as I commit war crimes and work through the introduction tutorial.</p>
+
+        {happy && <p>I am happy to be learning Astro.</p>}
+        {finished && <p>I finished the tutorial</p>}
+        {goal === 8 ? <p>My goal is to finish the tutorial in 8 lessons</p> : <p>My goal is not 8 lessons</p>}
 
         <p>Some facts about me:</p>
         <ul>
@@ -41,7 +65,8 @@ const skills = ["Python", "Lua", "C#", "CSS", "Pygame", "PyQt", "Panda3D", "HTML
         </ul>
         <p>My skills are:</p>
         <ul>
-            {skills.map((skill) => <li>{skill}</li>)}
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
+        <Footer />
 	</body>
 </html>
