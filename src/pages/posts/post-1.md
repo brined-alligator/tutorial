@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "My first blog post"
 pubDate: 03/09/2025
 description: "tjos os tje forst post on my astro blod"
@@ -9,9 +10,9 @@ image:
 tags: ["astro", "blogging", "learning astro"]
 ---
 
-# My First Blog Post
 
-Published on: 03/09/2025\
+
+
 
 Welcome to my first blog post.
 

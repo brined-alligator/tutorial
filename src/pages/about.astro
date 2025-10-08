@@ -1,7 +1,5 @@
 ---
-import '../styles/global.css'
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About Me";
 
@@ -23,50 +21,46 @@ const goal = 8;
 const skillColor = "navy"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-        <style define:vars={{skillColor}}>
-            h1 {
-                color: purple;
-                font-size: 4rem;
-            }
+<BaseLayout>
+    <h1>{pageTitle}</h1>
+    <h2>...and my new Astro site</h2>
 
+    <p>I am learning to violate the Geneva conventions (side note: and use Astro) to create my first blog.</p>
+    <p>This site will be updated as I commit war crimes and work through the introduction tutorial.</p>
+
+    {happy && <p>I am happy to be learning Astro.</p>}
+    {finished && <p>I finished the tutorial</p>}
+    {goal === 8 ? <p>My goal is to finish the tutorial in 8 lessons</p> : <p>My goal is not 8 lessons</p>}
+
+    <p>Some facts about me:</p>
+    <ul>
+        <li>My name is {identity.firstName}.</li>
+        <li>I live in {identity.country} and I am a {identity.occupation}.</li>
+        {identity.hobbies.length >= 2 &&
+            <li>two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[2]}.</li>
+        }
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+
+    <!-- page-specific styles -->
+     <style define:vars={{ skillColor }}>
         .skill {
             color: var(--skillColor);
             font-weight: bold;
         }
-        </style>
+     </style>
 
-	</head>
-	<body>
-        <Header />
-		<h1>{pageTitle}</h1>
-        <h2>...and my new Astro site</h2>
+     <!-- styles that will affect layout stuff (e.g h1) -->
+      <style is:global>
+        h1 {
+            color: purple;
+            font-size: 4rem;
+        }
+      </style>
+</BaseLayout>
 
-        <p>I am learning to violate the Geneva conventions (side note: and use Astro) to create my first blog.</p>
-        <p>This site will be updated as I commit war crimes and work through the introduction tutorial.</p>
 
-        {happy && <p>I am happy to be learning Astro.</p>}
-        {finished && <p>I finished the tutorial</p>}
-        {goal === 8 ? <p>My goal is to finish the tutorial in 8 lessons</p> : <p>My goal is not 8 lessons</p>}
 
-        <p>Some facts about me:</p>
-        <ul>
-            <li>My name is {identity.firstName}.</li>
-            <li>I live in {identity.country} and I am a {identity.occupation}.</li>
-            {identity.hobbies.length >= 2 &&
-                <li>two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[2]}.</li>
-            }
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-            {skills.map((skill) => <li class="skill">{skill}</li>)}
-        </ul>
-        <Footer />
-	</body>
-</html>
