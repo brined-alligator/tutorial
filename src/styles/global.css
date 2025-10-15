@@ -1,6 +1,9 @@
 html {
     background-color: #f1f5f9;
+    font: "Baskervville";
     font-family: sans-serif;
+    
+    
 }
 
 body {
@@ -57,6 +60,7 @@ h1 {
 .nav-links a:hover,
 .nav-links a:focus {
     background-color: #ff9776;
+    transform: scale(1.15);
 }
 
 .expanded {
