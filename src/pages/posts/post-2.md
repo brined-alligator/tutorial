@@ -10,4 +10,4 @@ image:
 tags: ["astro", "blogging", "learning astro", "new tag"]
 ---
 
-i liek questionbl lederships 
+placeholder

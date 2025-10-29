@@ -1,5 +1,5 @@
 html {
-    background-color: #f1f5f9;
+    background-color: #e6e6e6;
     font: "Baskervville";
     font-family: sans-serif;
     
@@ -67,6 +67,21 @@ h1 {
     display: unset;
 }
 
+.buttonsssss {
+    background-color: white;
+    color: purple;
+    margin: 0.5rem 0.5rem;
+
+}
+
+.buttonsssss:hover {
+    background-color: purple;
+    color: white;
+    transform: scale(1.15);
+    transition: background-color 2s;
+    transition-timing-function: ease-out;
+}
+
 @media screen and (min-width: 636px) {
     .nav-links {
         margin-left: 5em;
@@ -85,3 +100,29 @@ h1 {
         display: none;
     }
 }
+
+/* Dark/night theme */
+html.dark {
+    background-color: #050338;
+    color: #fff;
+
+}
+
+.dark .menu {
+    background-color: #fff;
+    color: #000;
+}
+
+.dark .nav-links a:hover,
+.dark .nav-links a:focus {
+    color: #050338;
+}
+
+.dark .nav-links a {
+    color: #fff;
+}
+
+.dark a {
+    color: #ff9776;
+}
+

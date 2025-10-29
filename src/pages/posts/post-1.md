@@ -25,5 +25,3 @@ Welcome to my _new blog_ about learning astro (yippee!) here I will share my pro
 3. **making new pages**: i learnt how to add new pages to my own wbesiet and add buttons to navigate between them.
 4. **making first blog post**: i made this log post you are reading. i do not know where you live. your tears are filled with salt.
 
-
-Let me tell you something: I do not like war crimes, but that does not mean I hate it. It's not fun... enough.

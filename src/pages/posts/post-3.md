@@ -6,12 +6,8 @@ description: "tjos os tje turd post on my astro blod"
 author: "prime_gator"
 image:
     url: "https://docs.astro.build/assets/rays.webp"
-    alt: "The Astro logo on a dark background with rainbow rayssssssssssssssssssssssssssssssss."
+    alt: "The Astro logo on a dark background with rainbow rays."
 tags: ["astro", "blogging", "learning astro"]
 ---
 
-
-
-
-
-I liek man in the high castle
+lorem ipsum dolor sit amet
